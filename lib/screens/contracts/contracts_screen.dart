@@ -7,17 +7,17 @@ import 'package:ibilling/core/widgets/calendar.dart';
 import 'package:ibilling/core/widgets/status_card.dart';
 
 class ContractsScreen extends StatelessWidget {
-  const ContractsScreen({Key? key}) : super(key: key);
+  ContractsScreen({Key? key}) : super(key: key);
 
+  int indexLength = 0;
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      backgroundColor: ColorConstants.kPrimaryBgColor,
       appBar: AppBarWidget.appbar("Contracts"),
       body: Column(
         children: [
-          Calendar(),
+          const Calendar(),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Row(
@@ -32,12 +32,12 @@ class ContractsScreen extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {},
-                    child: Text("Contracts"),
+                    child: const Text("Contracts"),
                   ),
                 ),
                 TextButton(
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     "Invoice",
                     style: TextStyle(
                       fontSize: 15,
@@ -49,12 +49,31 @@ class ContractsScreen extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: ListView.builder(
-              itemBuilder: (context, index) {
-                return StatusCard(billNumber: 154,billStatus: "Paid");
-              },
-              itemCount: 10,
-            ),
+            child: indexLength == 0
+                ? Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset(
+                        'assets/icons/empty_contract.svg',
+                        height: getHeight(88),
+                        width: getWidth(88),
+                        color: ColorConstants.kInactiveColor,
+                      ),
+                      const Text(
+                        "No contracts are made",
+                        style: TextStyle(
+                          color: ColorConstants.kInactiveColor,
+                          fontSize: 15,
+                        ),
+                      )
+                    ],
+                  )
+                : ListView.builder(
+                    itemBuilder: (context, index) {
+                      return StatusCard(billNumber: 154, billStatus: "Paid");
+                    },
+                    itemCount: 10,
+                  ),
           ),
           // ElevatedButton(
           //   style: ElevatedButton.styleFrom(
@@ -77,4 +96,3 @@ class ContractsScreen extends StatelessWidget {
     );
   }
 }
-

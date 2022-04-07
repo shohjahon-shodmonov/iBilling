@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ibilling/core/constants/const.dart';
 import 'package:ibilling/screens/home/home_screen.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'iBilling',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: ColorConstants.kPrimaryBgColor,
       ),
       home: HomeScreen(),
     );
