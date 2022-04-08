@@ -15,6 +15,8 @@ class ProfileScreen extends StatelessWidget {
       body: Column(
         children: [
           Container(
+            margin: EdgeInsets.all(10),
+            padding: EdgeInsets.all(15),
             height: getHeight(188),
             width: getWidth(343),
             decoration: BoxDecoration(
@@ -22,6 +24,7 @@ class ProfileScreen extends StatelessWidget {
               color: ColorConstants.kDarkContainerBg,
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Row(
                   children: [
@@ -49,7 +52,7 @@ class ProfileScreen extends StatelessWidget {
                           "Graphic Designer | IQ Education",
                           style: TextStyle(
                             color: ColorConstants.textColorInCard,
-                            fontSize: 15,
+                            fontSize: 16,
                           ),
                         )
                       ],
@@ -87,7 +90,7 @@ class ProfileScreen extends StatelessWidget {
       info,
       style: const TextStyle(
         color: ColorConstants.textColorInCardGrey,
-        fontSize: 14,
+        fontSize: 16,
       ),
     );
   }
@@ -97,7 +100,7 @@ class ProfileScreen extends StatelessWidget {
       title,
       style: const TextStyle(
         color: ColorConstants.textColorInCard,
-        fontSize: 15,
+        fontSize: 17,
       ),
     );
   }
