@@ -14,7 +14,7 @@ class ContractsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      appBar: AppBarWidget.appbar("Contracts"),
+      appBar: AppBarWidget.appbar("Contracts", true),
       body: Column(
         children: [
           const Calendar(),
@@ -51,7 +51,7 @@ class ContractsScreen extends StatelessWidget {
           Expanded(
             child: indexLength == 0
                 ? Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SvgPicture.asset(
                         'assets/icons/empty_contract.svg',
@@ -75,6 +75,7 @@ class ContractsScreen extends StatelessWidget {
                     itemCount: indexLength,
                   ),
           ),
+
           // ElevatedButton(
           //   style: ElevatedButton.styleFrom(
           //     primary: ColorConstants.kLightGreenButtonBgColor,

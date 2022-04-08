@@ -68,7 +68,7 @@ class HomeScreen extends StatelessWidget {
           BottomNavigationBarItem(
             label: "",
             icon: SvgPicture.asset(
-              'assets/icons/profile.svg',
+              'assets/icons/saved.svg',
               height: getHeight(50),
               width: getWidth(50),
               color: context.watch<BottomNavCubit>().pageIndex == 3
@@ -79,7 +79,7 @@ class HomeScreen extends StatelessWidget {
           BottomNavigationBarItem(
             label: "",
             icon: SvgPicture.asset(
-              'assets/icons/saved.svg',
+              'assets/icons/profile.svg',
               height: getHeight(50),
               width: getWidth(50),
               color: context.watch<BottomNavCubit>().pageIndex == 4
