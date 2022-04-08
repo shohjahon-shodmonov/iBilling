@@ -9,7 +9,7 @@ import 'package:ibilling/core/widgets/status_card.dart';
 class ContractsScreen extends StatelessWidget {
   ContractsScreen({Key? key}) : super(key: key);
 
-  int indexLength = 0;
+  int indexLength = 2;
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -72,7 +72,7 @@ class ContractsScreen extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return StatusCard(billNumber: 154, billStatus: "Paid");
                     },
-                    itemCount: 10,
+                    itemCount: indexLength,
                   ),
           ),
           // ElevatedButton(

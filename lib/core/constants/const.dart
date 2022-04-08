@@ -14,4 +14,7 @@ class ColorConstants {
   static const kPaidTextColor = Color(0xFF49B7A5);
   static const textColorInCard = Color(0xFFE7E7E7);
   static const textColorInCardGrey = Color(0xFF999999);
+
+  // history page
+  static const lineColorInDatePicker = Color(0xFFD1D1D1);
 }
