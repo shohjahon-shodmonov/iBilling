@@ -103,16 +103,21 @@ class ProfileScreen extends StatelessWidget {
               color: ColorConstants.kDarkContainerBg,
               child: ListTile(
                 title: Text(
-                  context.watch<LanguageCubit>().languageList[0]['language'],
+                  context.watch<LanguageCubit>().languageList[1]['language'],
                   style: const TextStyle(
                     color: ColorConstants.textColorInCard,
                     fontSize: 15,
                   ),
                 ),
-                trailing: SvgPicture.asset(
-                  context.watch<LanguageCubit>().languageList[0]['flag'],
-                  height: getHeight(60),
-                  width: getWidth(60),
+                trailing: IconButton(
+                  onPressed: () {
+                    BlocProvider.of<LanguageCubit>(context).showMyDialog(context);
+                  },
+                  icon: SvgPicture.asset(
+                    context.watch<LanguageCubit>().languageList[1]['flag'],
+                    height: getHeight(60),
+                    width: getWidth(60),
+                  ),
                 ),
               ),
             ),

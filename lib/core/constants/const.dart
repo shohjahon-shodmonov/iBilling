@@ -17,4 +17,9 @@ class ColorConstants {
 
   // history page
   static const lineColorInDatePicker = Color(0xFFD1D1D1);
+
+  // alert diolog
+  static const textCOlorDarkDreen = Color(0xFF008F7F);
+  static const textDoneColor = Color(0xFFFDFDFD);
+  
 }
