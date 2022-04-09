@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:ibilling/core/components/router.dart';
 import 'package:ibilling/core/constants/const.dart';
 import 'package:ibilling/screens/home/home_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+
+  final RouteGenerator _router = RouteGenerator();
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: ColorConstants.kPrimaryBgColor,
       ),
-      home: HomeScreen(),
+      initialRoute: '/',
+      onGenerateRoute: _router.routeGenerate,
     );
   }
 }

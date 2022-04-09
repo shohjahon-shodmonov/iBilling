@@ -25,7 +25,7 @@ class ProfileScreen extends StatelessWidget {
   Scaffold profileScaffold(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      appBar: AppBarWidget.appbar("Profile", false),
+      appBar: AppBarWidget.appbar(context, "Profile", false),
       body: Column(
         children: [
           Container(

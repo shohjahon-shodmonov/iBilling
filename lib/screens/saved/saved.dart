@@ -14,7 +14,7 @@ class SavedScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      appBar: AppBarWidget.appbar("Saved", true),
+      appBar: AppBarWidget.appbar(context, "Saved", true),
       body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: double.infinity,

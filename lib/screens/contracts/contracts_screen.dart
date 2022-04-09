@@ -14,7 +14,7 @@ class ContractsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      appBar: AppBarWidget.appbar("Contracts", true),
+      appBar: AppBarWidget.appbar(context, "Contracts", true),
       body: Column(
         children: [
           const Calendar(),

@@ -18,7 +18,7 @@ class HistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget.appbar("History", true),
+      appBar: AppBarWidget.appbar(context,"History", true),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
