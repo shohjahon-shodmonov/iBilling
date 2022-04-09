@@ -8,43 +8,42 @@ import 'package:ibilling/core/widgets/status_card.dart';
 class SavedScreen extends StatelessWidget {
   SavedScreen({Key? key}) : super(key: key);
 
-  int indexLength = 7;
+  int itemCountLength = 2;
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
       appBar: AppBarWidget.appbar("Saved", true),
-      body: Container(
+      body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: double.infinity,
-        child: Expanded(
-          child: indexLength == 0
-              ? Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SvgPicture.asset(
-                      'assets/icons/bookmark.svg',
-                      height: getHeight(88),
-                      width: getWidth(88),
+        child: itemCountLength == 0
+            ? Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(
+                    'assets/icons/bookmark.svg',
+                    height: getHeight(88),
+                    width: getWidth(88),
+                    color: ColorConstants.kInactiveColor,
+                  ),
+                  const Text(
+                    "No saved contracts",
+                    style: TextStyle(
                       color: ColorConstants.kInactiveColor,
+                      fontSize: 15,
                     ),
-                    const Text(
-                      "No saved contracts",
-                      style: TextStyle(
-                        color: ColorConstants.kInactiveColor,
-                        fontSize: 15,
-                      ),
-                    )
-                  ],
-                )
-              : ListView.builder(
-                  itemBuilder: (context, index) {
-                    return StatusCard(billNumber: 154, billStatus: "Paid");
-                  },
-                  itemCount: indexLength,
-                ),
-        ),
+                  )
+                ],
+              )
+            : ListView.builder(
+                itemBuilder: (context, index) {
+                  return StatusCard(billNumber: 154, billStatus: "Paid");
+                },
+                itemCount: itemCountLength,
+              ),
       ),
     );
   }
