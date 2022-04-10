@@ -63,13 +63,21 @@ class StatusCard extends StatelessWidget {
       padding: const EdgeInsets.all(5),
       height: getHeight(28),
       decoration: BoxDecoration(
-        color: ColorConstants.kPaidColor.withOpacity(0.3),
+        color: status == "Paid"
+            ? ColorConstants.kPaidColor.withOpacity(0.3)
+            : status == "In Process"
+                ? ColorConstants.kInProcessColor.withOpacity(0.3)
+                : ColorConstants.kRejectedColor.withOpacity(0.3),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Text(
         status,
-        style: const TextStyle(
-          color: ColorConstants.kPaidTextColor,
+        style: TextStyle(
+          color: status == "Paid"
+            ? ColorConstants.kPaidTextColor
+            : status == "In Process"
+                ? ColorConstants.kInProcessTextColor
+                : ColorConstants.kRejectedTextColor,
           fontSize: 14,
         ),
       ),

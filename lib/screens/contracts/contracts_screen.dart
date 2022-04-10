@@ -70,7 +70,7 @@ class ContractsScreen extends StatelessWidget {
                   )
                 : ListView.builder(
                     itemBuilder: (context, index) {
-                      return StatusCard(billNumber: 154, billStatus: "Paid");
+                      return StatusCard(billNumber: 154, billStatus: "Rejected");
                     },
                     itemCount: indexLength,
                   ),

@@ -17,6 +17,7 @@ class NewContract extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBarWidget.appbar(context, "New Contract", false),
       body: Padding(
         padding: const EdgeInsets.all(10.0),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ibilling/core/constants/const.dart';
+import 'package:ibilling/core/widgets/row_datepicker.dart';
 import 'package:ibilling/cubit/filter_cubit/filter_cubit.dart';
 import 'package:ibilling/cubit/filter_cubit/filter_state.dart';
 
@@ -23,14 +24,16 @@ class FilterScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text("Filters"),
+        title: const Text("Filters"),
         centerTitle: true,
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           title("Status"),
           context.read<FilterCubit>().checkbox(),
           title("Date"),
+          RowDatePicker(),
         ],
       ),
     );

@@ -9,3 +9,7 @@ class FilterInitial extends FilterState {
 class CheckboxState extends FilterState {
   CheckboxState();
 }
+
+class FilterComplete extends FilterState {
+  FilterComplete();
+}
