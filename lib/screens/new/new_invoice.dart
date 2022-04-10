@@ -5,71 +5,43 @@ import 'package:ibilling/core/widgets/appbar.dart';
 import 'package:ibilling/screens/new/new_components/text.dart';
 import 'package:ibilling/screens/new/new_components/textfield_decor.dart';
 
-class NewContract extends StatelessWidget {
-  NewContract({Key? key}) : super(key: key);
+class NewInvoice extends StatelessWidget {
+  NewInvoice({Key? key}) : super(key: key);
 
-  final TextEditingController _litsoController = TextEditingController();
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _adressController = TextEditingController();
-  final TextEditingController _innController = TextEditingController();
-  final TextEditingController _statusController = TextEditingController();
+  final TextEditingController _serviceController = TextEditingController();
+  final TextEditingController _amountController = TextEditingController();
+  final TextEditingController _invoiceStatusController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
-      appBar: AppBarWidget.appbar(context, "New Contract", false),
+      appBar: AppBarWidget.appbar(context, "New Invoice", true),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            text("Лицо"),
+            text("Name of service"),
             TextFormField(
-              controller: _litsoController,
-              cursorColor: Colors.white,
-              decoration: textFieldDecor(
-                  suffixIcon: const Icon(
-                Icons.arrow_drop_down_circle,
-                color: Colors.white,
-              )),
-              style: const TextStyle(color: Colors.white),
-            ),
-            text("Fisher's full name"),
-            TextFormField(
-              controller: _nameController,
+              controller: _serviceController,
               cursorColor: Colors.white,
               decoration: textFieldDecor(),
               style: const TextStyle(color: Colors.white),
             ),
-            text("Adress of the organization"),
+            text("Amount of the invoice"),
             TextFormField(
-              controller: _adressController,
+              controller: _amountController,
               cursorColor: Colors.white,
               decoration: textFieldDecor(),
               style: const TextStyle(color: Colors.white),
             ),
-            text("ИНН"),
+            text("Status of the invoice"),
             TextFormField(
-              controller: _innController,
+              controller: _invoiceStatusController,
               cursorColor: Colors.white,
-              decoration: textFieldDecor(
-                suffixIcon: const Icon(
-                  Icons.help,
-                  color: ColorConstants.textColorInCardGrey,
-                ),
-              ),
-              style: const TextStyle(color: Colors.white),
-            ),
-            text("Status of the contract"),
-            TextFormField(
-              controller: _statusController,
-              cursorColor: Colors.white,
-              decoration: textFieldDecor(
-                suffixIcon: const Icon(
-                  Icons.arrow_drop_down_circle,
-                  color: Colors.white,
-                ),
-              ),
+              decoration: textFieldDecor(),
               style: const TextStyle(color: Colors.white),
             ),
             const Spacer(),
@@ -79,7 +51,7 @@ class NewContract extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {},
                 child: const Text(
-                  "Save contract",
+                  "Save invoice",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
@@ -99,6 +71,4 @@ class NewContract extends StatelessWidget {
       ),
     );
   }
-
-  
 }

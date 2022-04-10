@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ibilling/cubit/bottom_nav_cubit/bottomnav_state.dart';
 import 'package:ibilling/screens/contracts/contracts_screen.dart';
 import 'package:ibilling/screens/history/history.dart';
+import 'package:ibilling/screens/new/new.dart';
 import 'package:ibilling/screens/new/new_contract.dart';
 import 'package:ibilling/screens/profile/profile_screen.dart';
 import 'package:ibilling/screens/saved/saved.dart';
@@ -13,7 +14,7 @@ class BottomNavCubit extends Cubit<BottomNavState> {
   List screens = [
     ContractsScreen(),
     HistoryScreen(),
-    NewContract(),
+    NewDialog(),
     SavedScreen(),
     ProfileScreen(),
   ];

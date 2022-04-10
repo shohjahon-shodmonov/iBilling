@@ -21,5 +21,8 @@ class ColorConstants {
   // alert diolog
   static const textCOlorDarkDreen = Color(0xFF008F7F);
   static const textDoneColor = Color(0xFFFDFDFD);
-  
+
+  //new page
+  static const buttonColorInNew = Color(0xFF4E4E4E);
+  static const textColorInNewConract = Color(0xFFF1F1F1);
 }
