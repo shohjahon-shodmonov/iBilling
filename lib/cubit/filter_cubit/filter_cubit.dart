@@ -81,4 +81,18 @@ class FilterCubit extends Cubit<FilterState> {
       ],
     );
   }
+
+  DateTime firstDate = DateTime.now();
+
+  changeFirstDate(v) async {
+    firstDate = await v;
+    emit(FilterComplete());
+  }
+
+  DateTime secondDate = DateTime.now();
+
+  changesecondDate(v) async {
+    secondDate = await v;
+    emit(FilterComplete());
+  }
 }

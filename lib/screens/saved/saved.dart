@@ -40,7 +40,7 @@ class SavedScreen extends StatelessWidget {
               )
             : ListView.builder(
                 itemBuilder: (context, index) {
-                  return StatusCard(billNumber: 154, billStatus: "Paid");
+                  return StatusCard(billNumber: 154, billStatus: "Paid", index: index);
                 },
                 itemCount: itemCountLength,
               ),

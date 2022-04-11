@@ -3,6 +3,7 @@ import 'package:ibilling/core/constants/const.dart';
 
 class StatusCardInfo extends StatelessWidget {
   StatusCardInfo({
+    required this.index,
     required this.name,
     required this.amount,
     required this.lastInvoice,
@@ -10,11 +11,11 @@ class StatusCardInfo extends StatelessWidget {
     required this.dateCreatedAt,
     Key? key,
   }) : super(key: key);
-
+  int index;
   String name;
-  int amount;
-  int lastInvoice;
-  int numberOfInvoices;
+  String amount;
+  String lastInvoice;
+  String numberOfInvoices;
   String dateCreatedAt;
 
   @override

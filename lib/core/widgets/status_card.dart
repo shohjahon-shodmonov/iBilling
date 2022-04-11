@@ -3,21 +3,24 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ibilling/core/components/size_config.dart';
 import 'package:ibilling/core/constants/const.dart';
 import 'package:ibilling/core/widgets/status_card_info.dart';
+import 'package:ibilling/data/local.dart';
 
 class StatusCard extends StatelessWidget {
   StatusCard({
     Key? key,
+    required this.index,
     required this.billNumber,
     required this.billStatus,
   }) : super(key: key);
 
+  int index;
   int billNumber;
   String billStatus;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       height: getHeight(148),
       width: getWidth(343),
       decoration: BoxDecoration(
@@ -36,22 +39,23 @@ class StatusCard extends StatelessWidget {
                 ),
                 Text(
                   "№ $billNumber",
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 15,
                     color: Colors.white,
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 statusChip(billStatus),
               ],
             ),
           ),
           StatusCardInfo(
-            name: "Yoldosheva Surayyo",
-            amount: 1200000,
-            lastInvoice: 156,
-            numberOfInvoices: 6,
-            dateCreatedAt: "30.01.2022",
+            index: index,
+            name: info[index]['name'],
+            amount: info[index]['amount'],
+            lastInvoice: info[index]['lastInvoice'],
+            numberOfInvoices: info[index]['numberOfInvoices'],
+            dateCreatedAt: info[index]['date'],
           ),
         ],
       ),
@@ -74,10 +78,10 @@ class StatusCard extends StatelessWidget {
         status,
         style: TextStyle(
           color: status == "Paid"
-            ? ColorConstants.kPaidTextColor
-            : status == "In Process"
-                ? ColorConstants.kInProcessTextColor
-                : ColorConstants.kRejectedTextColor,
+              ? ColorConstants.kPaidTextColor
+              : status == "In Process"
+                  ? ColorConstants.kInProcessTextColor
+                  : ColorConstants.kRejectedTextColor,
           fontSize: 14,
         ),
       ),
